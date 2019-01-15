@@ -1,5 +1,5 @@
 # fillit_test_files_generator
-Create as many random valid fillit tests files as you want. 
+Create as many random valid fillit tests files as you want. Useful if you want to use machine-learning techniques to solve your fillit.
 
 Once in the same folder as the .sh, just execute it with bash:
 bash  make_test.sh
