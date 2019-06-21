@@ -3,6 +3,7 @@
 n=1
 nb_pieces=0
 piece=0
+FILE=
 i=0
 
 #the number after -lt in the first while indicates the number of tests you want to generate
@@ -12,7 +13,7 @@ while [[ n -lt 10 ]]; do
 	i=0
 	while [[ $i -lt $nb_pieces ]]; do
 		piece=$[ ( RANDOM % 19  ) + 1 ]
-		echo -e "$(<pieces/p$piece)" >> pre$n
+		echo "$(<pieces/p$piece)" >> pre$n
 		i=$[$i + 1]
 	done
 	awk -v n=4 '1; NR % n == 0 {print ""; }' pre$n > test$n
@@ -21,5 +22,5 @@ while [[ n -lt 10 ]]; do
 	n=$[$n + 1]
 done
 
-mkdir tests
-mv test* tests/
+rm tests/*
+mv test[0-9] tests/
